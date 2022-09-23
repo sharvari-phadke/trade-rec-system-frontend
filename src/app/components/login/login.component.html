@@ -1,0 +1,48 @@
+
+
+<div class="bootstrap-wrapper" >
+  <div class="container marg-top">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <img src="/assets/loginImg.png" alt="Logo" class="logo">
+        <h1 class="welcome-text">Welcome!</h1>
+
+        <!-- Creating Login Form -->
+        <form (ngSubmit)="onSubmit()" class="form">
+          <!-- Username -->
+          <!-- <mat-form-field class="text-field" appearance="outline" style="outline:black">
+            <mat-label>Username</mat-label> -->
+            <label for="uname" id="uname-label">Username</label> <br>
+            <input [(ngModel)]="user.username" id="uname" name="username" required type="text" ><br><br>
+          <!-- </mat-form-field> -->
+          <!-- Password -->
+          <!-- <mat-form-field class="text-field" appearance="outline">
+            <mat-label>Password</mat-label> -->
+            <label for="pwd" id="pwd-label">Password</label> <br>
+            <input [(ngModel)]="user.password" id="pwd" required name="password" type="password" ><br>
+          <!-- </mat-form-field> -->
+          <!-- Buttons -->
+        <div class="container text-center">
+          <button class="login" type="submit" mat-raised-button color="primary" >
+            Login
+            
+          </button>
+          
+          <button class="reset"
+            style="margin-left: 25px"
+            type="reset"
+            mat-raised-button color="basic"
+          >
+            Reset
+          </button> 
+        </div>         
+      </form>
+      </div>
+    </div>
+    <div>
+      <h1 class="loginmsg">
+      {{loginMessage}}
+      </h1>
+    </div>
+  </div>
+</div>

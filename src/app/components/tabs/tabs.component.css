@@ -1,0 +1,14 @@
+
+::ng-deep .mat-ink-bar{
+    background-color: rgb(15, 165, 175) !important;
+}
+
+::ng-deep .mat-tab-label{
+
+    color: black; 
+    font-weight: 600;
+    font-size: 16px;
+    /* background-color: gray !important; */
+}
+
+

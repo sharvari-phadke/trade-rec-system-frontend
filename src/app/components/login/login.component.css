@@ -1,0 +1,89 @@
+.bootstrap-wrapper{
+    /* background-image: url("/assets/loginImg.png");  */
+    background-size: cover; 
+    height:100%; 
+}
+
+.welcome-text{
+    position: absolute;    
+    top: 150px;
+    vertical-align: middle;
+    text-shadow: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 70px;  
+    color: navy;
+}
+
+.logo{
+    position: relative;
+    left:800px;
+}
+
+.form{
+    position: relative;
+    top:100px;
+    left:50px;
+    font-size: 25px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#pwd{
+    border-color: navy;
+    border-width: thick;
+    position: relative;
+    top:50px;
+}
+#uname{
+    border-color: navy;
+    border-width: thick;
+    position: relative;
+    top:20px;
+}
+#pwd-label{
+    position: relative;
+    left:80px;
+    top:30px; 
+}
+
+#uname-label{
+    position: relative;
+    left:80px;
+}
+
+.login{
+    position: relative;
+    top:150px; 
+    right: 200px;
+    color: white;
+    background-color:navy; 
+    font-size: 20px; 
+    height:50px; 
+    width:110px; 
+}
+.reset{
+    position: relative;
+    top:150px; 
+    right: 150px;
+    color: white;
+    background-color:navy; 
+    font-size: 20px; 
+    height:50px; 
+    width:110px; 
+}
+
+.loginmsg{
+    color: rgb(175, 4, 38);
+    position: relative;
+    top:50px;
+    left:300px;
+    font-style: italic;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text-center{
+    padding-top: 50px;
+    color: darkblue;
+}
+ 
