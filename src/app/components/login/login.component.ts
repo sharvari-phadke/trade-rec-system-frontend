@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.user);
 
     // This routing is working
-    this.router.navigate(['/tabs']);
+    // this.router.navigate(['/tabs']);
 
     this._userService.getUserVerification(this.user).subscribe( result => {
       console.log("result   "+result);
