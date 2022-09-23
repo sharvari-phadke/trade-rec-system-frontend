@@ -6,7 +6,7 @@
 
 .welcome-text{
     position: absolute;    
-    top: 150px;
+    top: 50px;
     vertical-align: middle;
     text-shadow: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -22,7 +22,7 @@
 
 .form{
     position: relative;
-    top:100px;
+    top: 20px;
     left:50px;
     font-size: 25px; 
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -53,7 +53,7 @@
 
 .login{
     position: relative;
-    top:150px; 
+    top:50px; 
     right: 200px;
     color: white;
     background-color:navy; 
@@ -63,7 +63,7 @@
 }
 .reset{
     position: relative;
-    top:150px; 
+    top:50px; 
     right: 150px;
     color: white;
     background-color:navy; 
@@ -86,4 +86,4 @@
     padding-top: 50px;
     color: darkblue;
 }
- 
+
