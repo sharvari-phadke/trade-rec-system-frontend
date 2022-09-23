@@ -5,7 +5,8 @@
 
 ::ng-deep .mat-tab-label{
 
-    color: black; 
+    /* color: black;  */
+    color: white;
     font-weight: 600;
     font-size: 16px;
     /* background-color: gray !important; */

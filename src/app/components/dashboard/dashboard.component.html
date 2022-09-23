@@ -1,12 +1,17 @@
 &nbsp;
-<h4>Please choose market cap</h4>
-<label>Stock Options</label>
-<select id="selectid" class="form-control-mb-12" (change)="marketCapOptions($any($event.target).value)">
-   <option value="Large Cap">Large Cap</option>
-   <option value="Mid Cap">Mid Cap</option>
-   <option value="Small Cap">Small Cap</option>
-</select>
-
+<div class="dropdown">
+  <h4>Please choose market cap</h4>
+  <label>Stock Options</label>
+  <select
+    id="selectid"
+    class="form-control-mb-12"
+    (change)="marketCapOptions($any($event.target).value)"
+  >
+    <option value="Large Cap">Large Cap</option>
+    <option value="Mid Cap">Mid Cap</option>
+    <option value="Small Cap">Small Cap</option>
+  </select>
+</div>
 
 <!-- <h4>Please choose market cap</h4>
 <mat-form-field appearance="fill">
@@ -81,12 +86,12 @@
             <th>Current market price</th>
             <th>Quantity</th> -->
 
-        <th>Stock Symbol</th>
-        <th>Current Price</th>
-        <th>Close Two Weeks Ago</th>
-        <th>Change Percent</th>
-        <th>Quantity Saved</th>
-        <th>Username</th>
+        <th id="stockSymbol">Stock Symbol</th>
+        <th id="currentPrice">Current Price</th>
+        <th id="close2WeeksAgo">Close Two Weeks Ago</th>
+        <th id="changePercent">Change Percent</th>
+        <th id="quantitySaved">Quantity Saved</th>
+        <th id="username" >Username</th>
       </tr>
     </thead>
     <tbody *ngIf="stocks != null">

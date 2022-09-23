@@ -1,58 +1,26 @@
-<div class="bootstrap-wrapper">
-  <div class="container marg-top">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <img src="/assets/loginImg.png" alt="Logo" class="logo" />
-        <h1 class="welcome-text">Welcome!</h1>
+<div class="logo">
+    <img src="/assets/citigroup-logo.png" alt="Logo" class="citilogo" />
+</div>
 
-        <!-- Creating Login Form -->
-        <form (ngSubmit)="onSubmit()" class="form">
-          <!-- Username -->
-          <label for="uname" id="uname-label">Username</label> <br />
-          <input
-            [(ngModel)]="user.username"
-            id="uname"
-            name="username"
-            required
-            type="text"
-          /><br /><br />
-          <!-- Password -->
-          <label for="pwd" id="pwd-label">Password</label> <br />
-          <input
-            [(ngModel)]="user.password"
-            id="pwd"
-            required
-            name="password"
-            type="password"
-          /><br />
-          <!-- Buttons -->
-          <div class="container text-center">
-            <button
-              class="login"
-              type="submit"
-              mat-raised-button
-              color="primary"
-            >
-              Login
-            </button>
+<script src="/assets/10oL6wlc3R.json"></Script>
 
-            <button
-              class="reset"
-              style="margin-left: 25px"
-              type="reset"
-              mat-raised-button
-              color="basic"
-            >
-              Reset
-            </button>
-          </div>
-        </form>
-      </div>
+<div class="my-container">
+  <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
     </div>
-    <div>
-      <h1 class="loginmsg">
-        {{ loginMessage }}
-      </h1>
-    </div>
-  </div>
+    <form (ngSubmit)="onSubmit()">
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input [(ngModel)]="user.username" type="text" placeholder="Username" id="username">
+
+        <label for="password">Password</label>
+        <input [(ngModel)]="user.password" type="password" placeholder="Password" id="password">
+
+        <div class="button-container">
+            <button class="login" type="submit">Log In</button>
+            <button class="reset" type="reset">Reset</button>
+        </div>
+    </form>
 </div>

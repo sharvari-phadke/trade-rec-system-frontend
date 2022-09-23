@@ -1,9 +1,9 @@
  <div class="form-group">
-      <input type="search" class="form-control" [(ngModel)]="filter" placeholder="Filter by name">
+      <input type="search" class="form-control" [(ngModel)]="filter" placeholder="Filter by Stock Symbol">
     </div>
 <div  class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-  <table class="table table-striped table-sm" id="dataTable">
-    <thead>
+  <table class="table .table-dark table-sm" id="dataTable">
+    <thead class="tableHeading">
         <tr>
           <!-- <th scope="col" sortable="StockID" (sort)="onSort($event)">Stock ID</th>
           <th scope="col" sortable="stockName" (sort)="onSort($event)">stockName</th>
@@ -12,12 +12,13 @@
           <th scope="col" sortable="currentPrice" (sort)="onSort($event)">currentPrice</th>
           <th scope="col" sortable="marketOpenPrice" (sort)="onSort($event)">marketOpenPrice</th>             -->
 
-           <th scope="col" sortable="stockSymbol" (sort)="onSort($event)">Stock Symbol</th>
-          <th scope="col" sortable="currentPrice" (sort)="onSort($event)">Current Price</th>
-          <th scope="col" sortable="close2WeeksAgo" (sort)="onSort($event)">Close Two Weeks Ago</th>
-          <th scope="col" sortable="changePercent" (sort)="onSort($event)">Change Percent</th>
-          <th scope="col" sortable="quantitySaved" (sort)="onSort($event)">Quantity Saved</th>
-          <th scope="col" sortable="username" (sort)="onSort($event)">Username</th>            
+           <th id="stockSymbol" scope="col" sortable="stockSymbol" (sort)="onSort($event)">Stock Symbol</th>
+          <th id="currentPrice" scope="col" sortable="currentPrice" (sort)="onSort($event)">Current Price</th>
+          <th id="close2WeeksAgo" scope="col" sortable="close2WeeksAgo" (sort)="onSort($event)">Close Two Weeks Ago</th>
+          <th id="changePercent" scope="col" sortable="changePercent" (sort)="onSort($event)">Change Percent</th>
+          <th id="quantitySaved" scope="col" sortable="quantitySaved" (sort)="onSort($event)">Quantity Saved</th>
+          <th id="username" scope="col" sortable="username" (sort)="onSort($event)">Username</th>    
+          <th id="deleteStock">Delete Stock</th>        
         </tr>
     </thead>
     <tbody *ngIf="stocks!=null">
