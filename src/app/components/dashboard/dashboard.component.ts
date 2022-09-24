@@ -49,6 +49,7 @@ export class DashboardComponent implements OnInit {
 		this.fetchService.getUsername().subscribe(
 			(resp: any) => {
 				this.currentUser= resp;
+				console.log("In dashboard.component.ts\nUsername: ", this.currentUser);
 			}
 		);
 	}
@@ -103,7 +104,7 @@ export class DashboardComponent implements OnInit {
 	// }
 
 	saveStock(s: StockDTO) {
-
+		console.log("In saveStock\nUsername: ", this.currentUser);
 		const ss: StockDTO = new StockDTO(s.symbol, s.currPrice, s.close2WeeksAgo, s.changePercent, s.quantitySaved, this.currentUser);
 		this.fetchService.saveStock(ss).subscribe(
 			(response: any) => {
