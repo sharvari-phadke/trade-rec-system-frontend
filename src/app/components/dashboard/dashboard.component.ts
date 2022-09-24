@@ -84,7 +84,7 @@ export class DashboardComponent implements OnInit {
  
 	}
 
-	// onKey(event: any) { this.quantity = event.target.value; }
+	onKey(event: any) { this.quantity = event.target.value; }
 
 
 	// getRecommendations(marketCap: any) {
