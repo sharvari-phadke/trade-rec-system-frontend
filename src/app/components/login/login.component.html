@@ -1,26 +1,60 @@
-<div class="logo">
-    <img src="/assets/citigroup-logo.png" alt="Logo" class="citilogo" />
-</div>
+<div class="body">
+  <div class="backgroundvideo">
+    <video autoplay muted plays-inline loop>
+      <source src="assets/stock video.mov" type="video/mp4" />
+    </video>
+  </div>
 
-<script src="/assets/10oL6wlc3R.json"></Script>
+  <!-- <div class="logo">
+    <img
+      style="float: right"
+      src="/assets/citigroup-logo.png"
+      alt="Logo"
+      class="citilogo"
+    />
+  </div> -->
 
-<div class="my-container">
-  <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+  <div class="logo">
+    <img
+      style="float: right"
+      src="/assets/CitiLogoGif.gif"
+      alt="Logo"
+      class="citi-logo-gif"
+    />
+  </div>
+
+  <script src="/assets/10oL6wlc3R.json"></script>
+
+  <div class="my-container">
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
     <form (ngSubmit)="onSubmit()">
-        <h3>Login Here</h3>
+      <h3>Login Here</h3>
 
-        <label for="username">Username</label>
-        <input [(ngModel)]="user.username" type="text" placeholder="Username" id="username" name="uname">
+      <label for="username">Username</label>
+      <input
+        [(ngModel)]="user.username"
+        type="text"
+        placeholder="Username"
+        id="username"
+        name="uname"
+      />
 
-        <label for="password">Password</label>
-        <input [(ngModel)]="user.password" type="password" placeholder="Password" id="password" name="pwd">
+      <label for="password">Password</label>
+      <input
+        [(ngModel)]="user.password"
+        type="password"
+        placeholder="Password"
+        id="password"
+        name="pwd"
+      />
 
-        <div class="button-container">
-            <button class="login" type="submit">Log In</button>
-            <button class="reset" type="reset">Reset</button>
-        </div>
+      <div class="button-container">
+        <button class="login" type="submit">Log In</button>
+        <button class="reset" type="reset">Reset</button>
+      </div>
     </form>
+  </div>
 </div>
