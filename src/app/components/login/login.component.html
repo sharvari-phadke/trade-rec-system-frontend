@@ -1,8 +1,12 @@
 <div class="body">
   <div class="backgroundvideo">
-    <video autoplay muted plays-inline loop>
-      <source src="assets/stock video.mov" type="video/mp4" />
+    <!-- <video loop autoplay muted plays-inline >
+      <source src="assets/stockvideo.mov" type="video/mp4" />
+    </video> -->
+     <video [muted]="'muted'" loop autoplay>
+      <source src="assets/stockvideo.mov" type="video/mp4" />
     </video>
+    
   </div>
 
   <!-- <div class="logo">
