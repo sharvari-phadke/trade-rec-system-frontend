@@ -1,14 +1,14 @@
 export class StockDTO {
-    stockSymbol: string;
-    currentPrice: number;
+    symbol: string;
+    currPrice: number;
     close2WeeksAgo: number;
     changePercent: number;
     quantitySaved: number;
     username: string;
 
-    constructor(stockSymbol: string, currentPrice: number, close2WeeksAgo: number, changePercent: number, quantitySaved: number, username: string) {
-        this.stockSymbol = stockSymbol;
-        this.currentPrice = currentPrice;
+    constructor(symbol: string, currPrice: number, close2WeeksAgo: number, changePercent: number, quantitySaved: number, username: string) {
+        this.symbol = symbol;
+        this.currPrice = currPrice;
         this.close2WeeksAgo = close2WeeksAgo;
         this.changePercent = changePercent;
         this.quantitySaved = quantitySaved;

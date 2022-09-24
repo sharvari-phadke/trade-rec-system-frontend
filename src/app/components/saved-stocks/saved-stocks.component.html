@@ -12,12 +12,11 @@
           <th scope="col" sortable="currentPrice" (sort)="onSort($event)">currentPrice</th>
           <th scope="col" sortable="marketOpenPrice" (sort)="onSort($event)">marketOpenPrice</th>             -->
 
-           <th id="stockSymbol" scope="col" sortable="stockSymbol" (sort)="onSort($event)">Stock Symbol</th>
-          <th id="currentPrice" scope="col" sortable="currentPrice" (sort)="onSort($event)">Current Price</th>
+           <th id="symbol" scope="col" sortable="symbol" (sort)="onSort($event)">Stock Symbol</th>
+          <th id="currPrice" scope="col" sortable="currPrice" (sort)="onSort($event)">Current Price</th>
           <th id="close2WeeksAgo" scope="col" sortable="close2WeeksAgo" (sort)="onSort($event)">Close Two Weeks Ago</th>
           <th id="changePercent" scope="col" sortable="changePercent" (sort)="onSort($event)">Change Percent</th>
           <th id="quantitySaved" scope="col" sortable="quantitySaved" (sort)="onSort($event)">Quantity Saved</th>
-          <th id="username" scope="col" sortable="username" (sort)="onSort($event)">Username</th>    
           <th id="deleteStock">Delete Stock</th>        
         </tr>
     </thead>
@@ -27,14 +26,13 @@
             <td>{{stock.stockName}}</td>
             <td>{{stock.stockSymbol}}</td>
             <td>{{stock.marketCap}}</td>
-            <td>{{stock.currentPrice}}</td>
+            <td>{{stock.currPrice}}</td>
             <td>{{stock.marketOpenPrice}}</td> -->
-            <td>{{stock.stockSymbol}}</td>
-            <td>{{stock.currentPrice}}</td>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.currPrice}}</td>
             <td>{{stock.close2WeeksAgo}}</td>
             <td>{{stock.changePercent}}</td>
             <td>{{stock.quantitySaved}}</td>
-            <td>{{stock.username}}</td>
             <td > <button class=" btn btn-primary" (click)="deleteStock(stock)">Delete</button></td>
         </tr>
         

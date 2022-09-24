@@ -5,24 +5,30 @@ import { StockDTO } from 'src/app/classes/StockDTO';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const AUTH_API = 'https://aa7ccca8-45f7-436b-a884-f6acbba2dd57.mock.pstmn.io';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class FetchDataService {
-
-
+  
   constructor(private http: HttpClient) { }
 
-  getSavedStocks() {
-    return this.http.get("https://ab75b0ae-52bf-4b46-b401-78d71b63b971.mock.pstmn.io/getSavedStocks");
+  // getSavedStocks(){
+  //   return this.http.get("http://localhost:9000/api/stocks/getSavedStocks");
+  // }
+
+  getSavedStocks(username: string) {
+    return this.http.post("http://localhost:9000/api/stocks/getSavedStocks", username);
   }
 
-  deleteStock(ss: StockDTO): Observable<any> {
-    return this.http.get("https://ab75b0ae-52bf-4b46-b401-78d71b63b971.mock.pstmn.io/getSavedStocks");
+  deleteStock(s: StockDTO): Observable<any> {
+    return this.http.post("http://localhost:9000/api/stocks/delStock",s);
 
+  }
+
+  getUsername(): Observable<string> {
+    return this.http.get("http://localhost:9000/api/user/username", { responseType: 'text' });
   }
   
 }

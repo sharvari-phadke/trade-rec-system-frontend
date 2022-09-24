@@ -1,72 +1,21 @@
 &nbsp;
 <div class="dropdown">
-  <h4>Please choose market cap</h4>
-  <label>Stock Options</label>
-  <select
-    id="selectid"
-    class="form-control-mb-12"
-    (change)="marketCapOptions($any($event.target).value)"
-  >
-    <option value="Large Cap">Large Cap</option>
-    <option value="Mid Cap">Mid Cap</option>
-    <option value="Small Cap">Small Cap</option>
-  </select>
+  <h2 id="dropdownheading" style="color: white">Choose Market Cap</h2>
+  <div class="box">
+    <!-- <h4>Please choose market cap</h4> -->
+    <!-- <label>Stock Options</label>  -->
+    <select
+      id="selectid"
+      class="form-control-mb-12"
+      (change)="marketCapOptions($any($event.target).value)"
+    >
+      <!-- <option value="">Please Choose Cap</option> -->
+      <option value="Large Cap">Large Cap</option>
+      <option value="Mid Cap">Mid Cap</option>
+      <option value="Small Cap">Small Cap</option>
+    </select>
+  </div>
 </div>
-
-<!-- <h4>Please choose market cap</h4>
-<mat-form-field appearance="fill">
-  <mat-label>Stock Options</mat-label>
-  <mat-select (change)="marketCapOptions($any($event.target).value)">
-    <mat-option *ngFor="let options of stockOptions" [value]="options.value">
-      {{options.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field> -->
-<!-- <button mat-raised-button color="primary" (click)="">Primary</button> -->
-
-<!-- <h1 class="title">Please choose market cap to get relevant stock options</h1>
-
- 
-<div class="row">
-    <div class="col-sm" (click)="callFun('Large Cap')" id="capHead">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Large Cap</h5>
-          <p class="card-text">Click for top 5 large cap recommendations</p>
-          <a href="#" class="btn btn-primary">clickHere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm" (click)="callFun('Mid Cap')" id="capHead">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Mid Cap</h5>
-          <p class="card-text">Click for top 5 mid cap recommendations</p>
-          <a href="#" class="btn btn-primary">clickHere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm" (click)="callFun('Small Cap')" id="capHead">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Small Cap</h5>
-          <p class="card-text">Click for top 5 small cap recommendations</p>
-          <a href="#" class="btn btn-primary">clickHere</a>
-        </div>
-      </div>
-    </div> -->
-
-<!-- <div class="col-sm" (click)="getRecommendations(stocks[0].marketCap)" id="capHead"  >
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Recommend Stocks</h5>
-          <p class="card-text">Check for top 5 stock values</p>
-          <a href="#" class="btn btn-primary">clickHere</a>
-        </div>
-      </div>
-    </div> -->
-
-<!-- </div> -->
 
 <div
   class="table-responsive table mt-2"
@@ -74,7 +23,7 @@
   role="grid"
   aria-describedby="dataTable_info"
 >
-  <table class="table table-striped table-sm" id="dataTable">
+  <table class="table .table-dark table-sm" id="dataTable">
     <thead>
       <tr>
         <!-- <th>Stock ID</th>
@@ -86,20 +35,19 @@
             <th>Current market price</th>
             <th>Quantity</th> -->
 
-        <th id="stockSymbol">Stock Symbol</th>
-        <th id="currentPrice">Current Price</th>
+        <th id="symbol">Stock Symbol</th>
+        <th id="currPrice">Current Price</th>
         <th id="close2WeeksAgo">Close Two Weeks Ago</th>
         <th id="changePercent">Change Percent</th>
         <th id="quantitySaved">Quantity Saved</th>
-        <th id="username" >Username</th>
       </tr>
     </thead>
     <tbody *ngIf="stocks != null">
       <tr *ngFor="let stock of stocks">
         <!-- <td>{{stock.StockID}}</td> -->
         <!-- <td>{{stock.Name}}</td> -->
-        <td>{{ stock.stockSymbol }}</td>
-        <td>{{ stock.currentPrice }}</td>
+        <td>{{ stock.symbol }}</td>
+        <td>{{ stock.currPrice }}</td>
         <td>{{ stock.close2WeeksAgo }}</td>
         <td>{{ stock.changePercent }}</td>
         <td>{{ stock.quantitySaved }}</td>

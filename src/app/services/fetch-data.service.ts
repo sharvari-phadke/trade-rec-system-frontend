@@ -5,7 +5,7 @@ import { StockDTO } from 'src/app/classes/StockDTO';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const AUTH_API = 'http://localhost:8081/';
+// const AUTH_API = 'http://localhost:8081/';
 
 @Injectable({
   providedIn: 'root'
@@ -19,22 +19,24 @@ export class FetchDataService {
   getQuoteByMarketCap(marketCap:any)
   {
     
-    return this.http.get( "http://localhost:8085/getQuoteByMarketCap/"+marketCap);
+    return this.http.post( "http://localhost:9000/api/stockrecs/getStockRecs", marketCap);
   }
 
   getRecommendations(marketCap:any)
   {
-    return this.http.get( "http://localhost:8085/getRecommendations/"+marketCap);
+    return this.http.get( "http://localhost:9000/api/stockrecs/getStockRecs"+marketCap);
   }
 
   saveStock(ss:StockDTO): Observable<any> {
     
-    return this.http.post(AUTH_API + 'saveStock', 
-    JSON.stringify(ss)
-    , httpOptions);
+    return this.http.post("http://localhost:9000/api/stocks/addStock", ss
+    // JSON.stringify(ss)
+    // , httpOptions
+    );
   }
 
-  
-  
+  getUsername(): Observable<string> {
+    return this.http.get("http://localhost:9000/api/user/username", { responseType: 'text' });
+  }
   
 }

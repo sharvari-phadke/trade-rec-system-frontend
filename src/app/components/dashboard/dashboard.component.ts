@@ -22,21 +22,21 @@ export class DashboardComponent implements OnInit {
 		switch (value) {
 			case 'Large Cap':
 				// if Large Cap is selected do something.
-				this.callFun('Large Cap')
+				this.callFun('LargeCap')
 				break;
 			case 'Mid Cap':
 				// if Mid Cap is selected do something.
-				this.callFun('Mid Cap')
+				this.callFun('MidCap')
 				break;
 			case 'Small Cap':
 				// if Small Cap is selected do something.
-				this.callFun('Small Cap')
+				this.callFun('SmallCap')
 				break;
 		}
 
 	}
 
-	currentUser: any;
+	currentUser: string;
 	stocks: any;
 	marketCap: any;
 	loading: boolean | undefined;
@@ -46,60 +46,65 @@ export class DashboardComponent implements OnInit {
 	quantity: number = 1 
 	
 	ngOnInit(): void {
-		this.callFun('Large Cap')
+		this.fetchService.getUsername().subscribe(
+			(resp: any) => {
+				this.currentUser= resp;
+			}
+		);
 	}
 
 	callFun(marketCap: any) {
-		// this.stocks=null;
+		// this.stocks=null; 
+		
 		this.marketCap = marketCap;
-		console.log("In callFun "+ this.marketCap);
+		console.log("In callFun "+ this.marketCap); 
+		console.log("In callFun2 "+ this.currentUser); 
 		this.loading = true;
 		var len = 0;
 		this.fetchService.getQuoteByMarketCap(this.marketCap).subscribe(
 			(response) => {
-				console.log(response);
 				this.stocks = response;
 				this.loading = false;
-				// console.log(this.stocks);
+				
 				for (var s in this.stocks) {
 					len++;
 				}
-				console.log(len);
 				for (var i = 0; i < len; i++) {
 					// this.stckArray[i] = new stock(this.stocks[i].StockID, this.stocks[i].Name, this.stocks[i].Twoweekhigh, this.stocks[i].Twoweeklow, this.stocks[i].Lastclosingprice);
-					this.stckArray[i] = new StockDTO(this.stocks[i].stockSymbol, this.stocks[i].currentPrice, this.stocks[i].close2WeeksAgo, this.stocks[i].changePercent, this.stocks[i].quantitySaved, this.stocks[i].username);
+					this.stckArray[i] = new StockDTO(this.stocks[i].symbol, this.stocks[i].currentPrice, this.stocks[i].close2WeeksAgo, this.stocks[i].changePercent, this.stocks[i].quantitySaved, this.currentUser);
 				}
+				console.log(this.stckArray);
 			},
 			(error) => {
 				this.loading = false
 			}
 		)
 
-
-
+		
+ 
 	}
 
 	// onKey(event: any) { this.quantity = event.target.value; }
 
 
-	getRecommendations(marketCap: any) {
-		this.loading = true;
+	// getRecommendations(marketCap: any) {
+	// 	this.loading = true;
 
-		this.fetchService.getRecommendations(marketCap).subscribe(
-			(data: any) => {
-				this.stocks = data;
-				this.loading = false;
+	// 	this.fetchService.getRecommendations(marketCap).subscribe(
+	// 		(data: any) => {
+	// 			this.stocks = data;
+	// 			this.loading = false;
 
-			},
-			(err: any) => {
-				this.loading = false;
-			}
-		)
-	}
+	// 		},
+	// 		(err: any) => {
+	// 			this.loading = false;
+	// 		}
+	// 	)
+	// }
 
 	saveStock(s: StockDTO) {
 
-		const ss: StockDTO = new StockDTO(s.stockSymbol, s.currentPrice, s.close2WeeksAgo, s.changePercent, s.quantitySaved, s.username);
+		const ss: StockDTO = new StockDTO(s.symbol, s.currPrice, s.close2WeeksAgo, s.changePercent, s.quantitySaved, this.currentUser);
 		this.fetchService.saveStock(ss).subscribe(
 			(response: any) => {
 				if (response)

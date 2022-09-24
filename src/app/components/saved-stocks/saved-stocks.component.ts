@@ -17,7 +17,7 @@ export class SavedStocksComponent implements OnInit {
   constructor(private fetchService: FetchDataService) { }
 
   loading: boolean | undefined;
-  currentUser: any;
+  currentUser: string ;
   stocks: any;
   stocksData: any;
   stockId: any;
@@ -26,13 +26,18 @@ export class SavedStocksComponent implements OnInit {
   @ViewChildren(SortableHeaderDirective)
   headers!: QueryList<SortableHeaderDirective>;
 
-  ngOnInit(): void {    
-    this.getSavedStocks();
+  ngOnInit(): void { 
+    this.fetchService.getUsername().subscribe(
+			(resp: any) => {
+				this.currentUser= resp;
+			}
+		);
+     this.getSavedStocks();
   }
 
   getSavedStocks() {
     this.loading = true;
-    this.fetchService.getSavedStocks().subscribe(
+    this.fetchService.getSavedStocks(this.currentUser).subscribe(
       (data: any) => {
         this.stocks = data;
         this.loading = false;
@@ -47,7 +52,7 @@ export class SavedStocksComponent implements OnInit {
 
 
   deleteStock(s: StockDTO) {
-    const ss: StockDTO = new StockDTO(s.stockSymbol, s.currentPrice, s.close2WeeksAgo, s.changePercent, s.quantitySaved, s.username);    
+    const ss: StockDTO = new StockDTO(s.symbol, s.currPrice, s.close2WeeksAgo, s.changePercent, s.quantitySaved, this.currentUser);    
 
     this.fetchService.deleteStock(ss).subscribe(
 

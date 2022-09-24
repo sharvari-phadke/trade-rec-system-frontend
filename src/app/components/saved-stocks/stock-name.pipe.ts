@@ -15,7 +15,7 @@ export class StockPipe implements PipeTransform {
         }
 
         return values.filter((value: StockDTO) => {
-            return value.stockSymbol.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
+            return value.symbol.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
         });
     }
 }
