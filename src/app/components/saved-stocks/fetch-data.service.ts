@@ -18,8 +18,8 @@ export class FetchDataService {
   //   return this.http.get("http://localhost:9000/api/stocks/getSavedStocks");
   // }
 
-  getSavedStocks(username: string) {
-    return this.http.post("http://localhost:9000/api/stocks/getSavedStocks", username);
+  getSavedStocks(name: string) {
+    return this.http.post("http://localhost:9000/api/stocks/getSavedStocks", name);
   }
 
   deleteStock(s: StockDTO): Observable<any> {

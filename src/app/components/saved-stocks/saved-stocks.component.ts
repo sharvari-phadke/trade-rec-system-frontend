@@ -32,7 +32,7 @@ export class SavedStocksComponent implements OnInit {
 				this.currentUser= resp;
 			}
 		);
-     this.getSavedStocks();
+    //  this.getSavedStocks();
   }
 
   getSavedStocks() {
@@ -46,7 +46,7 @@ export class SavedStocksComponent implements OnInit {
       (err: any) => {
         console.log( err);
         this.loading = false;
-      }
+      } 
     )
   }
 

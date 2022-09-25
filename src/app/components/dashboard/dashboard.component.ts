@@ -105,7 +105,7 @@ export class DashboardComponent implements OnInit {
 
 	saveStock(s: StockDTO) {
 		console.log("In saveStock\nUsername: ", this.currentUser);
-		const ss: StockDTO = new StockDTO(s.symbol, s.currPrice, s.close2WeeksAgo, s.changePercent, s.quantitySaved, this.currentUser);
+		const ss: StockDTO = new StockDTO(s.symbol, s.currPrice, s.close2WeeksAgo, s.changePercent, this.quantity, this.currentUser);
 		this.fetchService.saveStock(ss).subscribe(
 			(response: any) => {
 				if (response)
