@@ -36,6 +36,7 @@ export class SavedStocksComponent implements OnInit {
   }
 
   getSavedStocks() {
+    console.log("In getSavedStocks");
     this.loading = true;
     this.fetchService.getSavedStocks(this.currentUser).subscribe(
       (data: any) => {

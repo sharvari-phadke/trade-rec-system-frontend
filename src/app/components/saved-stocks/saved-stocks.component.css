@@ -1,3 +1,53 @@
+/* Get saved stocks button */
+#getsavedstocks {
+    margin: 40px 10px 40px 50px;
+}
+
+div .btn-getsavedstocks {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 40em;
+    border-style: none;
+    box-shadow: #ADCFFF 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+div .btn-getsavedstocks:hover {
+    background-color: #FFC229;
+    box-shadow: #FF6314 0 -6px 8px inset;
+    transform: scale(1.125);
+}
+
+div .btn-getsavedstocks:active {
+    transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+    .btn-getsavedstocks {
+        font-size: 1.5rem;
+        padding: .75rem 2rem;
+    }
+}
+/* Get saved stocks button */
+
+
 /* sortable header directive */
 th[sortable] {
     cursor: pointer;
@@ -22,11 +72,29 @@ th[sortable].desc:before {
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
 }
+/* sortable header directive */
 
+
+/* Table design */
 #dataTable {
     /* color: black; */
     color: white;
     /* background-color: orange; */
+}
+
+th {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 55px;
+    padding-right: 40px;
+}
+
+td {
+    padding-top: 20px;
+    /* padding-bottom: 20px; */
+    padding-left: 90px;
+    padding-right: 40px;
 }
 
 #symbol:hover {
@@ -62,20 +130,6 @@ th[sortable].desc:before {
 #deleteStock {
     background-color: red;
 }
-
-th{
-    font-size: 18px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 55px;
-    padding-right: 40px;
-}
-
-td {
-    padding-top: 20px;
-    /* padding-bottom: 20px; */
-    padding-left: 90px;
-    padding-right: 40px;
-}
+/* Table design */
 
 

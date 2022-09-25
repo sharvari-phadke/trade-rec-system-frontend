@@ -1,48 +1,91 @@
- <div class="form-group">
-      <input type="search" class="form-control" [(ngModel)]="filter" placeholder="Filter by Stock Symbol">
-    </div>
-    <div>
-      <button class="btn btn-primary" (click)="getSavedStocks()">
-        Get saved stocks
-      </button>
-    </div>
-<div  class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+<!-- Get saved stocks button -->
+<div id="getsavedstocks">
+  <button class="btn-getsavedstocks" (click)="getSavedStocks()">
+    Get Saved Stocks
+  </button>
+</div>
+
+<div class="form-group">
+  <input
+    type="search"
+    class="form-control"
+    [(ngModel)]="filter"
+    placeholder="Filter by Stock Symbol"
+  />
+</div>
+<div
+  class="table-responsive table mt-2"
+  id="dataTable"
+  role="grid"
+  aria-describedby="dataTable_info"
+>
   <table class="table .table-dark table-sm" id="dataTable">
     <thead class="tableHeading">
-        <tr>
-          <!-- <th scope="col" sortable="StockID" (sort)="onSort($event)">Stock ID</th>
+      <tr>
+        <!-- <th scope="col" sortable="StockID" (sort)="onSort($event)">Stock ID</th>
           <th scope="col" sortable="stockName" (sort)="onSort($event)">stockName</th>
           <th scope="col" sortable="stockSymbol" (sort)="onSort($event)">stockSymbol</th>
           <th scope="col" sortable="marketCap" (sort)="onSort($event)">marketCap</th>
           <th scope="col" sortable="currentPrice" (sort)="onSort($event)">currentPrice</th>
           <th scope="col" sortable="marketOpenPrice" (sort)="onSort($event)">marketOpenPrice</th>             -->
 
-           <th id="symbol" scope="col" sortable="symbol" (sort)="onSort($event)">Stock Symbol</th>
-          <th id="currPrice" scope="col" sortable="currPrice" (sort)="onSort($event)">Current Price</th>
-          <th id="close2WeeksAgo" scope="col" sortable="close2WeeksAgo" (sort)="onSort($event)">Close Two Weeks Ago</th>
-          <th id="changePercent" scope="col" sortable="changePercent" (sort)="onSort($event)">Change Percent</th>
-          <th id="quantitySaved" scope="col" sortable="quantitySaved" (sort)="onSort($event)">Quantity Saved</th>
-          <th id="deleteStock">Delete Stock</th>        
-        </tr>
+        <th id="symbol" scope="col" sortable="symbol" (sort)="onSort($event)">
+          Stock Symbol
+        </th>
+        <th
+          id="currPrice"
+          scope="col"
+          sortable="currPrice"
+          (sort)="onSort($event)"
+        >
+          Current Price
+        </th>
+        <th
+          id="close2WeeksAgo"
+          scope="col"
+          sortable="close2WeeksAgo"
+          (sort)="onSort($event)"
+        >
+          Close Two Weeks Ago
+        </th>
+        <th
+          id="changePercent"
+          scope="col"
+          sortable="changePercent"
+          (sort)="onSort($event)"
+        >
+          Change Percent
+        </th>
+        <th
+          id="quantitySaved"
+          scope="col"
+          sortable="quantitySaved"
+          (sort)="onSort($event)"
+        >
+          Quantity Saved
+        </th>
+        <th id="deleteStock">Delete Stock</th>
+      </tr>
     </thead>
-    <tbody *ngIf="stocks!=null">
-        <tr *ngFor="let stock of stocks | stock:filter">
-            <!-- <td>{{stock.StockID}}</td>
+    <tbody *ngIf="stocks != null">
+      <tr *ngFor="let stock of stocks | stock: filter">
+        <!-- <td>{{stock.StockID}}</td>
             <td>{{stock.stockName}}</td>
             <td>{{stock.stockSymbol}}</td>
             <td>{{stock.marketCap}}</td>
             <td>{{stock.currPrice}}</td>
             <td>{{stock.marketOpenPrice}}</td> -->
-            <td>{{stock.symbol}}</td>
-            <td>{{stock.currPrice}}</td>
-            <td>{{stock.close2WeeksAgo}}</td>
-            <td>{{stock.changePercent}}</td>
-            <td>{{stock.quantitySaved}}</td>
-            <td > <button class=" btn btn-primary" (click)="deleteStock(stock)">Delete</button></td>
-        </tr>
-        
+        <td>{{ stock.symbol }}</td>
+        <td>{{ stock.currPrice }}</td>
+        <td>{{ stock.close2WeeksAgo }}</td>
+        <td>{{ stock.changePercent }}</td>
+        <td>{{ stock.quantitySaved }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="deleteStock(stock)">
+            Delete
+          </button>
+        </td>
+      </tr>
     </tbody>
-    
   </table>
 </div>
-

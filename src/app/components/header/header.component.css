@@ -17,7 +17,7 @@
     
 }
 
-.logo-image {
+.header-logo-image {
     width: 150px;
     height: 150px;
     /* border-radius: 50%; */
@@ -26,7 +26,7 @@
     margin-top: 40px;
 }
 
-#logout-btn {
+#btn-logout {
     margin-right: 40px;
     font-size: 20px;
 }
