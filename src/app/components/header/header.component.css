@@ -13,7 +13,7 @@
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     height: 65px;
     color: white !important;
-    font-size: 22px;
+    font-size: 24px;
     
 }
 
@@ -26,7 +26,50 @@
     margin-top: 40px;
 }
 
-#btn-logout {
+/* #btn-logout {
     margin-right: 40px;
     font-size: 20px;
+} */
+
+
+
+
+/* CSS */
+.btn-logout {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 15px 24px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    text-decoration: none;
+    /* text-align: center; */
+    /* align-items: center; */
+}
+
+.btn-logout:hover,
+.btn-logout:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.btn-logout:active {
+    opacity: .5;
 }

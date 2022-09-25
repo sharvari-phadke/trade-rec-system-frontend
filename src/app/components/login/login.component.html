@@ -16,13 +16,13 @@
     />
   </div>
 
-  <script src="/assets/10oL6wlc3R.json"></script>
-
+  <!-- Login Form -->
   <div class="my-container">
     <div class="background">
       <div class="shape"></div>
       <div class="shape"></div>
     </div>
+
     <form (ngSubmit)="onSubmit()">
       <h3>Login Here</h3>
 
@@ -30,7 +30,7 @@
       <input
         [(ngModel)]="user.username"
         type="text"
-        placeholder="Username"
+        placeholder="Enter Username"
         id="username"
         name="uname"
       />
@@ -39,15 +39,18 @@
       <input
         [(ngModel)]="user.password"
         type="password"
-        placeholder="Password"
+        placeholder="Enter Password"
         id="password"
         name="pwd"
       />
 
       <div class="button-container">
-        <button class="login" type="submit">Log In</button>
-        <button class="reset" type="reset">Reset</button>
+        <button class="btn-login" type="submit">Log In</button>
+        <button class="btn-reset" type="reset">Reset</button>
       </div>
     </form>
   </div>
 </div>
+
+
+

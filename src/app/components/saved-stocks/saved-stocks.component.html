@@ -22,13 +22,6 @@
   <table class="table .table-dark table-sm" id="dataTable">
     <thead class="tableHeading">
       <tr>
-        <!-- <th scope="col" sortable="StockID" (sort)="onSort($event)">Stock ID</th>
-          <th scope="col" sortable="stockName" (sort)="onSort($event)">stockName</th>
-          <th scope="col" sortable="stockSymbol" (sort)="onSort($event)">stockSymbol</th>
-          <th scope="col" sortable="marketCap" (sort)="onSort($event)">marketCap</th>
-          <th scope="col" sortable="currentPrice" (sort)="onSort($event)">currentPrice</th>
-          <th scope="col" sortable="marketOpenPrice" (sort)="onSort($event)">marketOpenPrice</th>             -->
-
         <th id="symbol" scope="col" sortable="symbol" (sort)="onSort($event)">
           Stock Symbol
         </th>
@@ -69,12 +62,6 @@
     </thead>
     <tbody *ngIf="stocks != null">
       <tr *ngFor="let stock of stocks | stock: filter">
-        <!-- <td>{{stock.StockID}}</td>
-            <td>{{stock.stockName}}</td>
-            <td>{{stock.stockSymbol}}</td>
-            <td>{{stock.marketCap}}</td>
-            <td>{{stock.currPrice}}</td>
-            <td>{{stock.marketOpenPrice}}</td> -->
         <td>{{ stock.symbol }}</td>
         <td>{{ stock.currPrice }}</td>
         <td>{{ stock.close2WeeksAgo }}</td>

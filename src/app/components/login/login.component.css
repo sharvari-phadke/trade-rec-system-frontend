@@ -2,21 +2,14 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
-*,
-*:before,
-*:after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
+/* Background video */
 .backgroundvideo {
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: -1;
     overflow: hidden;
-    
+
 }
 
 /* Minimum aspect ratio */
@@ -33,6 +26,18 @@
         width: auto;
         height: 100%;
     }
+}
+
+/* Background video */
+
+
+/* Login form */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .my-container {
@@ -67,8 +72,6 @@
 
 .shape:last-child {
     background: linear-gradient(to right,
-            /* #ff512f,
-        #f09819 */
             #DF172D,
             red);
     right: -30px;
@@ -128,24 +131,6 @@ input {
     color: #e5e5e5;
 }
 
-.login {
-    position: relative;
-    right: 50px;
-    color: white;
-    /* background-color: #302E29; */
-    height: 50px;
-    width: 50%;
-}
-
-.reset {
-    position: relative;
-    color: white;
-    /* background-color: #302E29; */
-    height: 50px;
-    width: 50%;
-    padding: 15px 0;
-}
-
 .button-container {
     font-size: 18px;
     font-weight: 600;
@@ -153,25 +138,12 @@ input {
     margin-left: 50px;
 }
 
-.citilogo {
-    height: 150px;
-    width: auto;
-    margin-top: 5px;
-    /* margin-left: 35px; */
-    margin-right: 50px;
+.btn-login {
+    right: 50px;
 }
 
-.citi-logo-gif {
-    height: 70px;
-    width: 80px;
-    margin-top: 15px;
-    /* margin-left: 35px; */
-    margin-right: 50px;
-}
-
-
-.login,
-.reset {
+.btn-login,
+.btn-reset {
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
@@ -200,21 +172,36 @@ input {
     white-space: nowrap;
     will-change: box-shadow, transform;
     font-size: 18px;
+    width: 50%;
 }
 
-.login:focus,
-.reset:focus {
+.btn-login:focus,
+.btn-reset:focus {
     box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.login:hover,
-.reset:hover {
+.btn-login:hover,
+.btn-reset:hover {
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
     transform: translateY(-2px);
 }
 
-.login:active,
-.reset:active {
+.btn-login:active,
+.btn-reset:active {
     box-shadow: #3c4fe0 0 3px 7px inset;
     transform: translateY(2px);
 }
+/* Login form */
+
+
+/* Login page logo */
+.citi-logo-gif {
+    height: 70px;
+    width: 80px;
+    margin-top: 15px;
+    /* margin-left: 35px; */
+    margin-right: 50px;
+}
+/* Login page logo */
+
+
